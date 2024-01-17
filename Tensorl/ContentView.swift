@@ -10,55 +10,93 @@ import SwiftData
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
 
+    @State private var searchText = ""
+
+       var body: some View {
+
+           NavigationView {
+               Sidebar()
+               DocumentsGridView()
+           }
+           .toolbar {
+                       // Left Icon Group
+                       ToolbarItemGroup(placement: .navigation) {
+                           Button(action: {}) {
+                               Image(systemName: "house")
+                           }
+                           Button(action: {}) {
+                               Image(systemName: "square.grid.2x2")
+                           }
+                       }
+                       
+                       // Center Serach Bar
+                       ToolbarItemGroup(placement: .principal) {
+                           HStack {
+                               Image(systemName: "magnifyingglass")
+                               TextField("Search", text: $searchText)
+                           }
+                       }
+                       
+                       // Right Icons Group
+                       ToolbarItemGroup(placement: .automatic) {
+                           Button(action: {}) {
+                               Image(systemName: "bell")
+                           }
+                           Button(action: {}) {
+                               Image(systemName: "person.crop.circle")
+                           }
+                       }
+                   }
+       }
+}
+
+struct Sidebar: View {
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-#if os(macOS)
-            .navigationSplitViewColumnWidth(min: 180, ideal: 200)
-#endif
-            .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
+        List {
+            Text("Home")
+            Text("New Project")
+            Text("Recent")
+            Text("About")
         }
+        .listStyle(SidebarListStyle())
     }
-
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
+    
+    func toggleSidebar() {
     }
+}
 
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+
+struct DocumentsGridView: View {
+    var body: some View {
+        ScrollView {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 20)], spacing: 20) {
+                ForEach(0..<10) { _ in
+                    DocumentCard()
+                }
             }
+            .padding()
+        }
+        .toolbar {
+            // ツールバーに追加するアイテム
         }
     }
 }
+
+struct DocumentCard: View {
+    var body: some View {
+        VStack {
+            RoundedRectangle(cornerRadius: 8)
+                .fill(Color.gray.opacity(0.2))
+                .frame(height: 120)
+            Text("Document Name")
+        }
+        .frame(width: 160, height: 200)
+        .background(RoundedRectangle(cornerRadius: 8).fill(Color.white))
+        .shadow(radius: 5)
+    }
+}
+
 
 #Preview {
     ContentView()

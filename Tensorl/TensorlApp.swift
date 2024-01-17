@@ -6,7 +6,23 @@
 //
 
 import SwiftUI
+import AppKit
 import SwiftData
+
+class CustomWindowController: NSWindowController {
+    init(window: NSWindow, contentViewController: NSViewController) {
+        super.init(window: window)
+        window.styleMask = [.closable, .resizable, .miniaturizable, .fullSizeContentView]
+        window.titleVisibility = .hidden
+        window.titlebarAppearsTransparent = true
+        window.contentView = contentViewController.view
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 
 @main
 struct TensorlApp: App {
@@ -27,6 +43,7 @@ struct TensorlApp: App {
         WindowGroup {
             ContentView()
         }
+        .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)
     }
 }
