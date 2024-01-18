@@ -54,15 +54,39 @@ struct ContentView: View {
 struct Sidebar: View {
     var body: some View {
         List {
-            Text("Home")
-            Text("New Project")
-            Text("Recent")
-            Text("About")
-        }
+                    NavigationLink(destination: HomeView()) {
+                        SidebarItem(label: "Home", imageName: "house")
+                    }
+                    NavigationLink(destination: HomeView()) {
+                        SidebarItem(label: "New Project", imageName: "plus.square.on.square")
+                    }
+                    NavigationLink(destination: HomeView()) {
+                        SidebarItem(label: "Recent", imageName: "clock")
+                    }
+                    NavigationLink(destination: HomeView()) {
+                        SidebarItem(label: "About", imageName: "info.circle")
+                    }
+                }
         .listStyle(SidebarListStyle())
     }
     
     func toggleSidebar() {
+    }
+}
+
+struct SidebarItem: View {
+    var label: String
+    var imageName: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100)
+            Text(label)
+        }
+        .frame(width: 100, height: 130) // 100x100 for the image + space for the label
     }
 }
 
