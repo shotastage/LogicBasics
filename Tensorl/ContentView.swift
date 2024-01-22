@@ -68,6 +68,8 @@ struct Sidebar: View {
                     }
                 }
         .listStyle(SidebarListStyle())
+        .frame(width: 60)
+
     }
     
     func toggleSidebar() {
@@ -83,10 +85,12 @@ struct SidebarItem: View {
             Image(systemName: imageName)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
+                .frame(width: 60, height: 60)
             Text(label)
+                .font(.caption)
+                .frame(width: 60)
         }
-        .frame(width: 100, height: 130) // 100x100 for the image + space for the label
+        .frame(width: 60, height: 90)
     }
 }
 

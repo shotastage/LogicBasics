@@ -9,7 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text("HOME VIEW!")
-            .padding()
+        Button("Open Spreadsheet Windows") {
+            print("Click!")
+        }
     }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2508466B2B5AD77200DC6C9C /* SpreadsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */; };
 		255B6B862B56210E00DB8EA0 /* TensorlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B852B56210E00DB8EA0 /* TensorlApp.swift */; };
 		255B6B882B56210E00DB8EA0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B872B56210E00DB8EA0 /* ContentView.swift */; };
 		255B6B8A2B56210E00DB8EA0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B892B56210E00DB8EA0 /* Item.swift */; };
@@ -15,6 +16,8 @@
 		255B6B9B2B56210F00DB8EA0 /* TensorlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B9A2B56210F00DB8EA0 /* TensorlTests.swift */; };
 		255B6BA52B56210F00DB8EA0 /* TensorlUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6BA42B56210F00DB8EA0 /* TensorlUITests.swift */; };
 		255B6BA72B56210F00DB8EA0 /* TensorlUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6BA62B56210F00DB8EA0 /* TensorlUITestsLaunchTests.swift */; };
+		255D04A22B598B4800D86F17 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255D04A12B598B4800D86F17 /* HomeView.swift */; };
+		25A1CCEF2B5EBA4600CFEB5E /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 25A1CCEE2B5EBA4600CFEB5E /* Logging */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetView.swift; sourceTree = "<group>"; };
 		255B6B822B56210E00DB8EA0 /* Tensorl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255B6B852B56210E00DB8EA0 /* TensorlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorlApp.swift; sourceTree = "<group>"; };
 		255B6B872B56210E00DB8EA0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,6 +52,7 @@
 		255B6BA02B56210F00DB8EA0 /* TensorlUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TensorlUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		255B6BA42B56210F00DB8EA0 /* TensorlUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorlUITests.swift; sourceTree = "<group>"; };
 		255B6BA62B56210F00DB8EA0 /* TensorlUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorlUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		255D04A12B598B4800D86F17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A1CCEF2B5EBA4600CFEB5E /* Logging in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +81,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		250846692B5AD76400DC6C9C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		255B6B792B56210D00DB8EA0 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +112,7 @@
 		255B6B842B56210E00DB8EA0 /* Tensorl */ = {
 			isa = PBXGroup;
 			children = (
+				250846692B5AD76400DC6C9C /* Views */,
 				255B6B852B56210E00DB8EA0 /* TensorlApp.swift */,
 				255B6B872B56210E00DB8EA0 /* ContentView.swift */,
 				255B6B892B56210E00DB8EA0 /* Item.swift */,
@@ -105,6 +120,7 @@
 				255B6B8D2B56210F00DB8EA0 /* Tensorl.entitlements */,
 				255B6B912B56210F00DB8EA0 /* Info.plist */,
 				255B6B8E2B56210F00DB8EA0 /* Preview Content */,
+				255D04A12B598B4800D86F17 /* HomeView.swift */,
 			);
 			path = Tensorl;
 			sourceTree = "<group>";
@@ -150,6 +166,9 @@
 			dependencies = (
 			);
 			name = Tensorl;
+			packageProductDependencies = (
+				25A1CCEE2B5EBA4600CFEB5E /* Logging */,
+			);
 			productName = Tensorl;
 			productReference = 255B6B822B56210E00DB8EA0 /* Tensorl.app */;
 			productType = "com.apple.product-type.application";
@@ -224,6 +243,7 @@
 			mainGroup = 255B6B792B56210D00DB8EA0;
 			packageReferences = (
 				25ED8B9F2B57AFA90098DC46 /* XCRemoteSwiftPackageReference "Charts" */,
+				25A1CCED2B5EBA4600CFEB5E /* XCRemoteSwiftPackageReference "swift-log" */,
 			);
 			productRefGroup = 255B6B832B56210E00DB8EA0 /* Products */;
 			projectDirPath = "";
@@ -268,8 +288,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				255B6B882B56210E00DB8EA0 /* ContentView.swift in Sources */,
+				255D04A22B598B4800D86F17 /* HomeView.swift in Sources */,
 				255B6B8A2B56210E00DB8EA0 /* Item.swift in Sources */,
 				255B6B862B56210E00DB8EA0 /* TensorlApp.swift in Sources */,
+				2508466B2B5AD77200DC6C9C /* SpreadsheetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +656,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		25A1CCED2B5EBA4600CFEB5E /* XCRemoteSwiftPackageReference "swift-log" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-log.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.4;
+			};
+		};
 		25ED8B9F2B57AFA90098DC46 /* XCRemoteSwiftPackageReference "Charts" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/danielgindi/Charts.git";
@@ -643,6 +673,14 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		25A1CCEE2B5EBA4600CFEB5E /* Logging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 25A1CCED2B5EBA4600CFEB5E /* XCRemoteSwiftPackageReference "swift-log" */;
+			productName = Logging;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 255B6B7A2B56210D00DB8EA0 /* Project object */;
 }
