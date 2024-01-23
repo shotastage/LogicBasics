@@ -9,13 +9,11 @@ import AppKit
 import SwiftUI
 
 struct HomeView: View {
+    @Binding var shownWindow: TensorlApp.WindowType
+
     var body: some View {
         Button("Open Spreadsheet Windows") {
-            print("Click!")
-            if let window = NSApp.keyWindow {
-                window.close()
-            }
-            openNewWindow()
+            shownWindow = .main
         }
     }
 }

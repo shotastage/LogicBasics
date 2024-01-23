@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @Binding var shownWindow: TensorlApp.WindowType
+
     @Environment(\.modelContext) private var modelContext
     @Environment(\.openWindow) var openWindow
 
@@ -24,7 +26,7 @@ struct ContentView: View {
                 Sidebar(selectedView: $selectedView)
                     .frame(width: 60)
                 Spacer()
-                MainContentView(selectedView: selectedView)
+                MainContentView(selectedView: selectedView, shownWindow: $shownWindow)
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -106,13 +108,14 @@ struct SidebarItem: View {
 
 struct MainContentView: View {
     var selectedView: String
+    @Binding var shownWindow: TensorlApp.WindowType
 
     var body: some View {
         switch selectedView {
             case "Home":
-                HomeView()
+                HomeView(shownWindow: $shownWindow)
             case "New Project":
-                HomeView()
+                HomeView(shownWindow: $shownWindow)
             // 他のケース...
             default:
                 Text("Select a view")
@@ -150,7 +153,7 @@ struct DocumentCard: View {
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
-}
+// #Preview {
+//    ContentView(shownWindow: <#Binding<TensorlApp.WindowType>#>)
+//        .modelContainer(for: Item.self, inMemory: true)
+// }

@@ -11,43 +11,41 @@ import SwiftUI
 
 @main
 struct TensorlApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Item.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
+    @State private var shownWindow: WindowType = .creation
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            switch shownWindow {
+                case .creation:
+                    ContentView(shownWindow: $shownWindow)
+                        .frame(minWidth: 800, maxWidth: .infinity, minHeight: 400, maxHeight: .infinity)
+
+                case .main:
+                    SpreadsheetView()
+                        .frame(minWidth: 1500, maxWidth: .infinity, minHeight: 900, maxHeight: .infinity)
+            }
         }
         .windowStyle(.hiddenTitleBar)
-        .modelContainer(sharedModelContainer)
         .commands {
             CommandGroup(replacing: .newItem) {
-                Button("Open New Window") {
-                    openNewWindow()
+                Button("New") {
+                    print("NEW")
+                }
+                Button("New from template") {
+                    print("TEMPLATE")
+                }
+                Button("Open") {
+                    print("OPEN")
+                }
+                Button("Open recent...") {
+                    print("OPEN RECENT")
                 }
             }
         }
     }
-}
 
-func openNewWindow() {
-    let windowSize = NSRect(x: 0, y: 0, width: 1400, height: 900)
-    let newWindow = NSWindow(contentRect: windowSize, styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView], backing: .buffered, defer: false)
-    newWindow.center()
-
-    let windowController = CustomWindowController(window: newWindow, rootView: SpreadsheetView())
-    windowController.window?.titleVisibility = .hidden
-    windowController.window?.titlebarAppearsTransparent = true
-    windowController.window?.makeKeyAndOrderFront(nil)
-    NSApp.activate(ignoringOtherApps: true)
+    enum WindowType {
+        case creation
+        case main
+    }
 }
