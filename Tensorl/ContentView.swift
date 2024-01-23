@@ -5,81 +5,80 @@
 //  Created by Shota Shimazu on 2024/01/16.
 //
 
-import SwiftUI
 import SwiftData
+import SwiftUI
 
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openWindow) var openWindow
 
     @State private var searchText = ""
+    @State private var selectedView: String = "Home"
 
-       var body: some View {
+    var body: some View {
+        NavigationView {
+            Sidebar()
+            DocumentsGridView()
+        }
+        .toolbar {
+            // Left Icon Group
+            ToolbarItemGroup(placement: .navigation) {
+                Button(action: {}) {
+                    Image(systemName: "house")
+                }
+                Button(action: {}) {
+                    Image(systemName: "square.grid.2x2")
+                }
+            }
 
-           NavigationView {
-               Sidebar()
-               DocumentsGridView()
-           }
-           .toolbar {
-                       // Left Icon Group
-                       ToolbarItemGroup(placement: .navigation) {
-                           Button(action: {}) {
-                               Image(systemName: "house")
-                           }
-                           Button(action: {}) {
-                               Image(systemName: "square.grid.2x2")
-                           }
-                       }
-                       
-                       // Center Serach Bar
-                       ToolbarItemGroup(placement: .principal) {
-                           HStack {
-                               Image(systemName: "magnifyingglass")
-                               TextField("Search", text: $searchText)
-                           }
-                       }
-                       
-                       // Right Icons Group
-                       ToolbarItemGroup(placement: .automatic) {
-                           Button(action: {}) {
-                               Image(systemName: "bell")
-                           }
-                           Button(action: {}) {
-                               Image(systemName: "person.crop.circle")
-                           }
-                       }
-                   }
-       }
+            // Center Serach Bar
+            ToolbarItemGroup(placement: .principal) {
+                HStack {
+                    Image(systemName: "magnifyingglass")
+                    TextField("Search", text: $searchText)
+                }
+            }
+
+            // Right Icons Group
+            ToolbarItemGroup(placement: .automatic) {
+                Button(action: {}) {
+                    Image(systemName: "bell")
+                }
+                Button(action: {}) {
+                    Image(systemName: "person.crop.circle")
+                }
+            }
+        }
+    }
 }
 
 struct Sidebar: View {
     var body: some View {
         List {
-                    NavigationLink(destination: HomeView()) {
-                        SidebarItem(label: "Home", imageName: "house")
-                    }
-                    NavigationLink(destination: HomeView()) {
-                        SidebarItem(label: "New Project", imageName: "plus.square.on.square")
-                    }
-                    NavigationLink(destination: HomeView()) {
-                        SidebarItem(label: "Recent", imageName: "clock")
-                    }
-                    NavigationLink(destination: HomeView()) {
-                        SidebarItem(label: "About", imageName: "info.circle")
-                    }
-                }
+            NavigationLink(destination: HomeView()) {
+                SidebarItem(label: "Home", imageName: "house")
+            }
+            NavigationLink(destination: HomeView()) {
+                SidebarItem(label: "New Project", imageName: "plus.square.on.square")
+            }
+            NavigationLink(destination: HomeView()) {
+                SidebarItem(label: "Recent", imageName: "clock")
+            }
+            NavigationLink(destination: HomeView()) {
+                SidebarItem(label: "About", imageName: "info.circle")
+            }
+        }
         .listStyle(SidebarListStyle())
         .frame(width: 60)
+    }
 
-    }
-    
-    func toggleSidebar() {
-    }
+    func toggleSidebar() {}
 }
 
 struct SidebarItem: View {
     var label: String
     var imageName: String
-    
+
     var body: some View {
         VStack {
             Image(systemName: imageName)
@@ -94,12 +93,11 @@ struct SidebarItem: View {
     }
 }
 
-
 struct DocumentsGridView: View {
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 20)], spacing: 20) {
-                ForEach(0..<10) { _ in
+                ForEach(0 ..< 10) { _ in
                     DocumentCard()
                 }
             }
@@ -124,7 +122,6 @@ struct DocumentCard: View {
         .shadow(radius: 5)
     }
 }
-
 
 #Preview {
     ContentView()

@@ -5,9 +5,9 @@
 //  Created by Shota Shimazu on 2024/01/16.
 //
 
-import SwiftUI
 import AppKit
 import SwiftData
+import SwiftUI
 
 class CustomWindowController: NSWindowController {
     init(window: NSWindow, contentViewController: NSViewController) {
@@ -17,12 +17,12 @@ class CustomWindowController: NSWindowController {
         window.titlebarAppearsTransparent = true
         window.contentView = contentViewController.view
     }
-    
-    required init?(coder: NSCoder) {
+
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-
 
 @main
 struct TensorlApp: App {

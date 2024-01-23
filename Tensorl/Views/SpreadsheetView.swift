@@ -14,8 +14,8 @@ struct SpreadsheetView: View {
     var body: some View {
         ScrollView([.horizontal, .vertical]) {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 10)) {
-                ForEach(0..<20, id: \.self) { row in
-                    ForEach(0..<10, id: \.self) { column in
+                ForEach(0 ..< 20, id: \.self) { row in
+                    ForEach(0 ..< 10, id: \.self) { column in
                         TextField("", text: $data[row][column])
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .frame(minWidth: 80, minHeight: 30)
