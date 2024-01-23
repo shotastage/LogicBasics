@@ -9,21 +9,6 @@ import AppKit
 import SwiftData
 import SwiftUI
 
-class CustomWindowController: NSWindowController {
-    init(window: NSWindow, contentViewController: NSViewController) {
-        super.init(window: window)
-        window.styleMask = [.closable, .resizable, .miniaturizable, .fullSizeContentView]
-        window.titleVisibility = .hidden
-        window.titlebarAppearsTransparent = true
-        window.contentView = contentViewController.view
-    }
-
-    @available(*, unavailable)
-    required init?(coder _: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-}
-
 @main
 struct TensorlApp: App {
     var sharedModelContainer: ModelContainer = {
@@ -45,5 +30,24 @@ struct TensorlApp: App {
         }
         .windowStyle(.hiddenTitleBar)
         .modelContainer(sharedModelContainer)
+        .commands {
+            CommandGroup(replacing: .newItem) {
+                Button("Open New Window") {
+                    openNewWindow()
+                }
+            }
+        }
     }
+}
+
+func openNewWindow() {
+    let windowSize = NSRect(x: 0, y: 0, width: 1400, height: 900)
+    let newWindow = NSWindow(contentRect: windowSize, styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView], backing: .buffered, defer: false)
+    newWindow.center()
+
+    let windowController = CustomWindowController(window: newWindow, rootView: SpreadsheetView())
+    windowController.window?.titleVisibility = .hidden
+    windowController.window?.titlebarAppearsTransparent = true
+    windowController.window?.makeKeyAndOrderFront(nil)
+    NSApp.activate(ignoringOtherApps: true)
 }

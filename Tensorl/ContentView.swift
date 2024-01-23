@@ -16,68 +16,76 @@ struct ContentView: View {
     @State private var selectedView: String = "Home"
 
     var body: some View {
-        NavigationView {
-            Sidebar()
-            DocumentsGridView()
-        }
-        .toolbar {
-            // Left Icon Group
-            ToolbarItemGroup(placement: .navigation) {
-                Button(action: {}) {
-                    Image(systemName: "house")
-                }
-                Button(action: {}) {
-                    Image(systemName: "square.grid.2x2")
-                }
-            }
+        VStack(spacing: 0) {
+            ToolbarView(searchText: $searchText)
+                .frame(height: 44)
 
-            // Center Serach Bar
-            ToolbarItemGroup(placement: .principal) {
-                HStack {
-                    Image(systemName: "magnifyingglass")
-                    TextField("Search", text: $searchText)
-                }
+            HStack(spacing: 0) {
+                Sidebar(selectedView: $selectedView)
+                    .frame(width: 60)
+                Spacer()
+                MainContentView(selectedView: selectedView)
+                Spacer()
             }
-
-            // Right Icons Group
-            ToolbarItemGroup(placement: .automatic) {
-                Button(action: {}) {
-                    Image(systemName: "bell")
-                }
-                Button(action: {}) {
-                    Image(systemName: "person.crop.circle")
-                }
-            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
 
-struct Sidebar: View {
+struct ToolbarView: View {
+    @Binding var searchText: String
+
     var body: some View {
-        List {
-            NavigationLink(destination: HomeView()) {
-                SidebarItem(label: "Home", imageName: "house")
+        HStack {
+            Button(action: {}) {
+                Image(systemName: "house")
             }
-            NavigationLink(destination: HomeView()) {
-                SidebarItem(label: "New Project", imageName: "plus.square.on.square")
+            Button(action: {}) {
+                Image(systemName: "square.grid.2x2")
             }
-            NavigationLink(destination: HomeView()) {
-                SidebarItem(label: "Recent", imageName: "clock")
+            Spacer()
+            HStack {
+                Image(systemName: "magnifyingglass")
+                TextField("Search", text: $searchText)
             }
-            NavigationLink(destination: HomeView()) {
-                SidebarItem(label: "About", imageName: "info.circle")
+            .frame(width: 200)
+
+            Spacer()
+
+            Button(action: {}) {
+                Image(systemName: "bell")
+            }
+            Button(action: {}) {
+                Image(systemName: "person.crop.circle")
             }
         }
-        .listStyle(SidebarListStyle())
-        .frame(width: 60)
+        .padding(.horizontal)
     }
+}
 
-    func toggleSidebar() {}
+struct Sidebar: View {
+    @Binding var selectedView: String
+
+    var body: some View {
+        VStack(spacing: 0) {
+            SidebarItem(label: "Home", imageName: "house", isSelected: selectedView == "Home")
+                .onTapGesture { selectedView = "Home" }
+            SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
+                .onTapGesture { selectedView = "New Project" }
+            SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
+                .onTapGesture { selectedView = "New Project" }
+            SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
+                .onTapGesture { selectedView = "New Project" }
+            Spacer()
+        }
+        .foregroundColor(.red)
+    }
 }
 
 struct SidebarItem: View {
     var label: String
     var imageName: String
+    var isSelected: Bool
 
     var body: some View {
         VStack {
@@ -85,11 +93,30 @@ struct SidebarItem: View {
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 60, height: 60)
+                .foregroundColor(isSelected ? .blue : .black)
             Text(label)
                 .font(.caption)
                 .frame(width: 60)
+                .foregroundColor(isSelected ? .blue : .black)
         }
         .frame(width: 60, height: 90)
+        .background(isSelected ? Color.blue.opacity(0.2) : Color.clear)
+    }
+}
+
+struct MainContentView: View {
+    var selectedView: String
+
+    var body: some View {
+        switch selectedView {
+            case "Home":
+                HomeView()
+            case "New Project":
+                HomeView()
+            // 他のケース...
+            default:
+                Text("Select a view")
+        }
     }
 }
 
