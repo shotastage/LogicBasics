@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  CreationWindowView.swift
 //  Tensorl
 //
 //  Created by Shota Shimazu on 2024/01/16.
@@ -8,12 +8,7 @@
 import SwiftData
 import SwiftUI
 
-struct ContentView: View {
-    @Binding var shownWindow: TensorlApp.WindowType
-
-    @Environment(\.modelContext) private var modelContext
-    @Environment(\.openWindow) var openWindow
-
+struct CreationWindowView: View {
     @State private var searchText = ""
     @State private var selectedView: String = "Home"
 
@@ -26,7 +21,7 @@ struct ContentView: View {
                 Sidebar(selectedView: $selectedView)
                     .frame(width: 60)
                 Spacer()
-                MainContentView(selectedView: selectedView, shownWindow: $shownWindow)
+                MainContentView(selectedView: selectedView)
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -108,18 +103,34 @@ struct SidebarItem: View {
 
 struct MainContentView: View {
     var selectedView: String
-    @Binding var shownWindow: TensorlApp.WindowType
 
     var body: some View {
         switch selectedView {
             case "Home":
-                HomeView(shownWindow: $shownWindow)
+                HomeView()
             case "New Project":
-                HomeView(shownWindow: $shownWindow)
-            // 他のケース...
+
+                Button("メインウィンドウを開く") {
+                    openSecondWindow()
+                }
+
             default:
                 Text("Select a view")
         }
+    }
+
+    private func openSecondWindow() {
+        let contentRect = NSRect(x: 0, y: 0, width: 1000, height: 300)
+        let newWindow = NSWindow(
+            contentRect: contentRect,
+            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
+            backing: .buffered, defer: false
+        )
+        newWindow.center()
+        newWindow.setContentSize(contentRect.size)
+        newWindow.setFrame(contentRect, display: true)
+        newWindow.contentView = NSHostingView(rootView: SpreadsheetView())
+        newWindow.makeKeyAndOrderFront(nil)
     }
 }
 
