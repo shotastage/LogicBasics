@@ -13,19 +13,26 @@ struct CreationWindowView: View {
     @State private var selectedView: String = "Home"
 
     var body: some View {
-        VStack(spacing: 0) {
-            ToolbarView(searchText: $searchText)
-                .frame(height: 44)
+        ZStack {
+            VisualEffectView(material: .underWindowBackground,
+                             blendingMode: .behindWindow,
+                             state: .active,
+                             emphasized: false)
 
-            HStack(spacing: 0) {
-                Sidebar(selectedView: $selectedView)
-                    .frame(width: 60)
-                Spacer()
-                MainContentView(selectedView: selectedView)
-                Spacer()
+            VStack(spacing: 0) {
+                ToolbarView(searchText: $searchText)
+                    .frame(height: 44)
+
+                HStack(spacing: 0) {
+                    Sidebar(selectedView: $selectedView)
+                        .frame(width: 60)
+                    Spacer()
+                    MainContentView(selectedView: selectedView)
+                    Spacer()
+                }
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 

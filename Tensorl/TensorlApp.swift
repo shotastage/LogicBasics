@@ -6,38 +6,21 @@
 //
 
 import AppKit
-import SwiftData
 import SwiftUI
+import WindowManagement
 
 @main
 struct TensorlApp: App {
-    @State private var shownWindow: WindowType = .creation
+    @NSApplicationDelegateAdaptor var appdelegate: AppDelegate
+
+    @Environment(\.openWindow)
+    var openWindow
 
     var body: some Scene {
-        WindowGroup {
+        #if os(macOS)
+        Window("Statistics", id: "stats") {
             CreationWindowView()
         }
-        .windowStyle(.hiddenTitleBar)
-        .commands {
-            CommandGroup(replacing: .newItem) {
-                Button("New") {
-                    print("NEW")
-                }
-                Button("New from template") {
-                    print("TEMPLATE")
-                }
-                Button("Open") {
-                    print("OPEN")
-                }
-                Button("Open recent...") {
-                    print("OPEN RECENT")
-                }
-            }
-        }
-    }
-
-    enum WindowType {
-        case creation
-        case main
+        #endif
     }
 }
