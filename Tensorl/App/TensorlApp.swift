@@ -27,6 +27,7 @@ struct TensorlApp: App {
             }
             .register(.creationWindowGroup)
             .titlebarAppearsTransparent()
+            .transition(.default)
             .windowButton(.zoomButton, hidden: true)
             .windowButton(.miniaturizeButton, hidden: true)
             .enableOpenWindow()
@@ -37,7 +38,17 @@ struct TensorlApp: App {
                     .injectWindow(.spreadWindowGroup)
             }
             .register(.spreadWindowGroup)
+            .titlebarAppearsTransparent()
             .transition(.documentWindow)
+            WindowGroup(id: SceneID.settingWindowGroup.id) {
+                SettingsView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .background(.regularMaterial)
+                    .injectWindow(.settingWindowGroup)
+            }
+            .register(.settingWindowGroup)
+            .titlebarAppearsTransparent()
+            .transition(.default)
         }
         .environment(\.controlSize, .large)
     }

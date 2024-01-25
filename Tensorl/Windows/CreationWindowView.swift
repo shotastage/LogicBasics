@@ -78,13 +78,12 @@ struct Sidebar: View {
                 .onTapGesture { selectedView = "Home" }
             SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
                 .onTapGesture { selectedView = "New Project" }
-            SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
-                .onTapGesture { selectedView = "New Project" }
-            SidebarItem(label: "New Project", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
+            SidebarItem(label: "Settings", imageName: "gearshape", isSelected: selectedView == "Settings")
+                .onTapGesture { selectedView = "Settings" }
+            SidebarItem(label: "About", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
                 .onTapGesture { selectedView = "New Project" }
             Spacer()
         }
-        .foregroundColor(.red)
     }
 }
 
@@ -118,11 +117,13 @@ struct MainContentView: View {
             case "Home":
                 HomeView()
             case "New Project":
-
                 Button("Open Main Window") {
                     openSecondWindow()
                 }
-
+            case "Settings":
+                Button("Open Setting") {
+                    NSApp.openWindow(.settingWindowGroup)
+                }
             default:
                 Text("Select a view")
         }

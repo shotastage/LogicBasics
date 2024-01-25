@@ -13,7 +13,8 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         Button("Open Spreadsheet Windows") {
-            print("LLLL")
+            WindowManager.closeKeyWindow()
+            NSApp.openWindow(.spreadWindowGroup)
         }
     }
 }
