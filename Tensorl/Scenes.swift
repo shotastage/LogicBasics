@@ -9,6 +9,6 @@ import Foundation
 import WindowManagement
 
 extension SceneID {
-    static let firstWindowGroup = SceneID("firstWindowGroup")
+    static let creationWindowGroup = SceneID("creation")
     static let spreadWindowGroup = SceneID("spreadsheet")
 }

@@ -11,8 +11,5 @@ import Cocoa
 import SwiftUI
 
 class AppDelegate: NSObject, NSApplicationDelegate {
-    func applicationDidFinishLaunching(_ notification: Notification) {
-        // NSApp.openSettings()
-        // NSApp.openWindow(.firstWindowGroup)
-    }
+    func applicationDidFinishLaunching(_ notification: Notification) {}
 }

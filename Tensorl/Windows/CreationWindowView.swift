@@ -119,7 +119,7 @@ struct MainContentView: View {
                 HomeView()
             case "New Project":
 
-                Button("メインウィンドウを開く") {
+                Button("Open Main Window") {
                     openSecondWindow()
                 }
 
@@ -129,6 +129,7 @@ struct MainContentView: View {
     }
 
     private func openSecondWindow() {
+        WindowManager.closeKeyWindow()
         NSApp.openWindow(.spreadWindowGroup)
     }
 }
