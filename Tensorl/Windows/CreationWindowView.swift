@@ -9,6 +9,8 @@ import SwiftData
 import SwiftUI
 
 struct CreationWindowView: View {
+    @Environment(\.window) var window
+
     @State private var searchText = ""
     @State private var selectedView: String = "Home"
 
@@ -127,17 +129,7 @@ struct MainContentView: View {
     }
 
     private func openSecondWindow() {
-        let contentRect = NSRect(x: 0, y: 0, width: 1000, height: 300)
-        let newWindow = NSWindow(
-            contentRect: contentRect,
-            styleMask: [.titled, .closable, .miniaturizable, .resizable, .fullSizeContentView],
-            backing: .buffered, defer: false
-        )
-        newWindow.center()
-        newWindow.setContentSize(contentRect.size)
-        newWindow.setFrame(contentRect, display: true)
-        newWindow.contentView = NSHostingView(rootView: SpreadsheetView())
-        newWindow.makeKeyAndOrderFront(nil)
+        NSApp.openWindow(.spreadWindowGroup)
     }
 }
 

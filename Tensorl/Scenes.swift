@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import WindowManagement
 
-enum SceneID: String, CaseIterable {
-    case splash
-    case creation
-    case spreadsheet
+extension SceneID {
+    static let firstWindowGroup = SceneID("firstWindowGroup")
+    static let spreadWindowGroup = SceneID("spreadsheet")
 }

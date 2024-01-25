@@ -5,7 +5,9 @@
 //  Created by Shota Shimazu on 2024/01/19.
 //
 
+#if os(macOS)
 import AppKit
+#endif
 import SwiftUI
 
 struct HomeView: View {
