@@ -29,6 +29,7 @@ struct CreationWindowView: View {
                 }
             }
         }
+        .edgesIgnoringSafeArea(.top)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
@@ -38,6 +39,11 @@ struct ToolbarView: View {
 
     var body: some View {
         HStack {
+            Button(action: {
+                NSApp.hide(nil)
+            }) {
+                Image(systemName: "cross")
+            }
             Button(action: {}) {
                 Image(systemName: "house")
             }
