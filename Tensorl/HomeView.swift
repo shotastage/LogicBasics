@@ -14,7 +14,7 @@ struct HomeView: View {
     var body: some View {
         Button("Open Spreadsheet Windows") {
             WindowManager.closeKeyWindow()
-            NSApp.openWindow(.spreadWindowGroup)
+            NSApp.openWindow(.tensorWindowGroup)
         }
     }
 }

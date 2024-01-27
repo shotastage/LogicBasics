@@ -10,6 +10,6 @@ import WindowManagement
 
 extension SceneID {
     static let creationWindowGroup = SceneID("creation")
-    static let spreadWindowGroup = SceneID("spreadsheet")
+    static let tensorWindowGroup = SceneID("tensor")
     static let settingWindowGroup = SceneID("settings")
 }

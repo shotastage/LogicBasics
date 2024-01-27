@@ -16,11 +16,6 @@ struct CreationWindowView: View {
 
     var body: some View {
         ZStack {
-            VisualEffectView(material: .underWindowBackground,
-                             blendingMode: .behindWindow,
-                             state: .active,
-                             emphasized: false)
-
             VStack(spacing: 0) {
                 ToolbarView(searchText: $searchText)
                     .frame(height: 44)
@@ -131,7 +126,7 @@ struct MainContentView: View {
 
     private func openSecondWindow() {
         WindowManager.closeKeyWindow()
-        NSApp.openWindow(.spreadWindowGroup)
+        NSApp.openWindow(.tensorWindowGroup)
     }
 }
 

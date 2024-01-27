@@ -32,5 +32,5 @@ struct SettingsView: View {
 }
 
 #Preview {
-    SpreadsheetView()
+    SettingsView()
 }

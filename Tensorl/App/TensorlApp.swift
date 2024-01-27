@@ -14,7 +14,7 @@ struct TensorlApp: App {
     @NSApplicationDelegateAdaptor var delegate: AppDelegate
 
     init() {
-        enableWindowSizeSaveOnQuit(true)
+        // - enableWindowSizeSaveOnQuit(true)
     }
 
     var body: some Scene {
@@ -22,22 +22,26 @@ struct TensorlApp: App {
             WindowGroup(id: SceneID.creationWindowGroup.id) {
                 CreationWindowView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.regularMaterial)
+                    .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
                     .injectWindow(.creationWindowGroup)
             }
             .register(.creationWindowGroup)
             .titlebarAppearsTransparent()
+            .windowStyle(HiddenTitleBarWindowStyle())
+            .commands {
+                CommandGroup(replacing: .windowList) {}
+            }
             .transition(.default)
             .windowButton(.zoomButton, hidden: true)
             .windowButton(.miniaturizeButton, hidden: true)
             .enableOpenWindow()
-            WindowGroup(id: SceneID.spreadWindowGroup.id) {
-                SpreadsheetView()
+            WindowGroup(id: SceneID.tensorWindowGroup.id) {
+                TensorWindowView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(.regularMaterial)
-                    .injectWindow(.spreadWindowGroup)
+                    .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
+                    .injectWindow(.tensorWindowGroup)
             }
-            .register(.spreadWindowGroup)
+            .register(.tensorWindowGroup)
             .titlebarAppearsTransparent()
             .transition(.documentWindow)
             WindowGroup(id: SceneID.settingWindowGroup.id) {
@@ -46,8 +50,12 @@ struct TensorlApp: App {
                     .background(.regularMaterial)
                     .injectWindow(.settingWindowGroup)
             }
-            .register(.settingWindowGroup)
+            .windowStyle(HiddenTitleBarWindowStyle())
+            .commands {
+                CommandGroup(replacing: .windowList) {}
+            }
             .titlebarAppearsTransparent()
+            .register(.settingWindowGroup)
             .transition(.default)
         }
         .environment(\.controlSize, .large)
