@@ -43,6 +43,9 @@ struct TensorlApp: App {
               */
 
             // Main Window
+            TensorWindow()
+            
+            /*
             WindowGroup(id: SceneID.tensorWindowGroup.id) {
                 TensorWindowView()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -52,7 +55,8 @@ struct TensorlApp: App {
             .register(.tensorWindowGroup)
             .titlebarAppearsTransparent()
             .transition(.documentWindow)
-
+             */
+            
             // Settings Window
             WindowGroup(id: SceneID.settingWindowGroup.id) {
                 SettingsView()

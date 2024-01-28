@@ -6,7 +6,6 @@
 //
 
 import AppKit
-import Cocoa
 import SwiftUI
 import WindowManagement
 

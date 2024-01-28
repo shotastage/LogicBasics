@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2508466B2B5AD77200DC6C9C /* SpreadsheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */; };
+		2508466B2B5AD77200DC6C9C /* TensorWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508466A2B5AD77200DC6C9C /* TensorWindowView.swift */; };
 		252791852B60B94B00BDAFCF /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252791842B60B94B00BDAFCF /* Scenes.swift */; };
 		2544C5942B62ACE500BD04F3 /* TSWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2544C5932B62ACE500BD04F3 /* TSWindowManager.swift */; };
 		255B6B882B56210E00DB8EA0 /* CreationWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B872B56210E00DB8EA0 /* CreationWindowView.swift */; };
@@ -22,6 +22,11 @@
 		255F19422B615D4000412B3B /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F19412B615D4000412B3B /* VisualEffectView.swift */; };
 		255F19462B6174F100412B3B /* WindowManagement in Frameworks */ = {isa = PBXBuildFile; productRef = 255F19452B6174F100412B3B /* WindowManagement */; };
 		25A1CCEF2B5EBA4600CFEB5E /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 25A1CCEE2B5EBA4600CFEB5E /* Logging */; };
+		25CA4BD62B64B6E700680842 /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BD52B64B6E700680842 /* WelcomeWindow.swift */; };
+		25CA4BD82B64B89A00680842 /* NSApp+openWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BD72B64B89A00680842 /* NSApp+openWindow.swift */; };
+		25CA4BDD2B64BAD300680842 /* TensorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BDC2B64BAD300680842 /* TensorWindow.swift */; };
+		25E21AC72B65FAE60071D4CC /* FxAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */; };
+		25E21AC92B65FB8B0071D4CC /* Rand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E21AC82B65FB8B0071D4CC /* Rand.swift */; };
 		25FE06232B5FCB8700DE562F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE06222B5FCB8700DE562F /* AppDelegate.swift */; };
 		25FE06652B60248400DE562F /* TensorlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE06642B60248400DE562F /* TensorlApp.swift */; };
 /* End PBXBuildFile section */
@@ -44,7 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpreadsheetView.swift; sourceTree = "<group>"; };
+		2508466A2B5AD77200DC6C9C /* TensorWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorWindowView.swift; sourceTree = "<group>"; };
 		252791842B60B94B00BDAFCF /* Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		2544C5932B62ACE500BD04F3 /* TSWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSWindowManager.swift; sourceTree = "<group>"; };
 		255B6B822B56210E00DB8EA0 /* Tensorl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorl.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +67,11 @@
 		255D04A12B598B4800D86F17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		255F193E2B60C49800412B3B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		255F19412B615D4000412B3B /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		25CA4BD52B64B6E700680842 /* WelcomeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
+		25CA4BD72B64B89A00680842 /* NSApp+openWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApp+openWindow.swift"; sourceTree = "<group>"; };
+		25CA4BDC2B64BAD300680842 /* TensorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorWindow.swift; sourceTree = "<group>"; };
+		25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxAdaptor.swift; sourceTree = "<group>"; };
+		25E21AC82B65FB8B0071D4CC /* Rand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rand.swift; sourceTree = "<group>"; };
 		25FE06222B5FCB8700DE562F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25FE06642B60248400DE562F /* TensorlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorlApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -96,16 +106,24 @@
 		250846692B5AD76400DC6C9C /* Windows */ = {
 			isa = PBXGroup;
 			children = (
-				255B6B872B56210E00DB8EA0 /* CreationWindowView.swift */,
-				2508466A2B5AD77200DC6C9C /* SpreadsheetView.swift */,
+				25CA4BDE2B64BAD700680842 /* Tensor */,
+				25CA4BD42B64B6DE00680842 /* Welcome */,
 			);
 			path = Windows;
+			sourceTree = "<group>";
+		};
+		2516E75E2B6493F500845458 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Vendor;
 			sourceTree = "<group>";
 		};
 		2544C58E2B62AB7400BD04F3 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				2544C5932B62ACE500BD04F3 /* TSWindowManager.swift */,
+				25CA4BD72B64B89A00680842 /* NSApp+openWindow.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -133,6 +151,8 @@
 		255B6B842B56210E00DB8EA0 /* Tensorl */ = {
 			isa = PBXGroup;
 			children = (
+				25E21AC52B65FA480071D4CC /* Engine */,
+				2516E75E2B6493F500845458 /* Vendor */,
 				2544C58E2B62AB7400BD04F3 /* Utils */,
 				255F19432B61697900412B3B /* App */,
 				255F19402B615D3500412B3B /* Views */,
@@ -205,6 +225,33 @@
 				25FE06642B60248400DE562F /* TensorlApp.swift */,
 			);
 			path = App;
+			sourceTree = "<group>";
+		};
+		25CA4BD42B64B6DE00680842 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				255B6B872B56210E00DB8EA0 /* CreationWindowView.swift */,
+				25CA4BD52B64B6E700680842 /* WelcomeWindow.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		25CA4BDE2B64BAD700680842 /* Tensor */ = {
+			isa = PBXGroup;
+			children = (
+				2508466A2B5AD77200DC6C9C /* TensorWindowView.swift */,
+				25CA4BDC2B64BAD300680842 /* TensorWindow.swift */,
+			);
+			path = Tensor;
+			sourceTree = "<group>";
+		};
+		25E21AC52B65FA480071D4CC /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */,
+				25E21AC82B65FB8B0071D4CC /* Rand.swift */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -346,16 +393,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25CA4BD82B64B89A00680842 /* NSApp+openWindow.swift in Sources */,
 				2544C5942B62ACE500BD04F3 /* TSWindowManager.swift in Sources */,
 				255B6B882B56210E00DB8EA0 /* CreationWindowView.swift in Sources */,
+				25E21AC92B65FB8B0071D4CC /* Rand.swift in Sources */,
+				25CA4BDD2B64BAD300680842 /* TensorWindow.swift in Sources */,
 				255D04A22B598B4800D86F17 /* HomeView.swift in Sources */,
 				255F19422B615D4000412B3B /* VisualEffectView.swift in Sources */,
 				255F193F2B60C49800412B3B /* SettingsView.swift in Sources */,
 				25FE06652B60248400DE562F /* TensorlApp.swift in Sources */,
+				25CA4BD62B64B6E700680842 /* WelcomeWindow.swift in Sources */,
 				255B6B8A2B56210E00DB8EA0 /* Item.swift in Sources */,
 				252791852B60B94B00BDAFCF /* Scenes.swift in Sources */,
 				25FE06232B5FCB8700DE562F /* AppDelegate.swift in Sources */,
-				2508466B2B5AD77200DC6C9C /* SpreadsheetView.swift in Sources */,
+				2508466B2B5AD77200DC6C9C /* TensorWindowView.swift in Sources */,
+				25E21AC72B65FAE60071D4CC /* FxAdaptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
