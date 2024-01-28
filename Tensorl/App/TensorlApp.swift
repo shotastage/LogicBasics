@@ -44,19 +44,19 @@ struct TensorlApp: App {
 
             // Main Window
             TensorWindow()
-            
+
             /*
-            WindowGroup(id: SceneID.tensorWindowGroup.id) {
-                TensorWindowView()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
-                    .injectWindow(.tensorWindowGroup)
-            }
-            .register(.tensorWindowGroup)
-            .titlebarAppearsTransparent()
-            .transition(.documentWindow)
-             */
-            
+             WindowGroup(id: SceneID.tensorWindowGroup.id) {
+                 TensorWindowView()
+                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                     .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
+                     .injectWindow(.tensorWindowGroup)
+             }
+             .register(.tensorWindowGroup)
+             .titlebarAppearsTransparent()
+             .transition(.documentWindow)
+              */
+
             // Settings Window
             WindowGroup(id: SceneID.settingWindowGroup.id) {
                 SettingsView()

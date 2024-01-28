@@ -6,8 +6,5 @@
 //
 
 import AppKit
-import Cocoa
 
-import SwiftUI
-
-class AppDelegate: NSObject, NSApplicationDelegate {}
+final class AppDelegate: NSObject, NSApplicationDelegate {}

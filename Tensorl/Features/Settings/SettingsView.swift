@@ -5,18 +5,15 @@
 //  Created by Shota Shimazu on 2024/01/24.
 //
 
+import AppKit
 import Combine
 import Foundation
 import SwiftUI
+import WindowManagement
 
 final class Settings: ObservableObject {
     static let shared: Settings = .init()
 }
-
-import AppKit
-import Foundation
-import SwiftUI
-import WindowManagement
 
 struct SettingsView: View {
     @Environment(\.window) var window

@@ -1,14 +1,14 @@
 //
-//  Rand.swift
+//  RandSecure.swift
 //  Tensorl
 //
 //  Created by Shota Shimazu on 2024/01/28.
 //
 
-import Foundation
+import DataLogic
 
-struct FXRand: FXAdaptor {
-    var name: String = "RAND"
+struct FXRandSecure: FXAdaptor {
+    var name: String = "RANDSECURE"
     
     var input: [Any]
     
@@ -19,6 +19,7 @@ struct FXRand: FXAdaptor {
     }
     
     mutating func calc() {
+        let res = OnChipTRNG(length: 100)
         res = Double.random(in: 0...1)
     }
 }
