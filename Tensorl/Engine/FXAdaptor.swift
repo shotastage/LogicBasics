@@ -1,5 +1,5 @@
 //
-//  FxAdaptor.swift
+//  FXAdaptor.swift
 //  Tensorl
 //
 //  Created by Shota Shimazu on 2024/01/28.
@@ -8,9 +8,13 @@
 import Combine
 
 protocol FXAdaptor {
+    associatedtype InputType
+    associatedtype ResultType
+
     var name: String { get }
-    var input: [Any] { get }
-    var res: Any? { get set }
-    init(input: [Any])
-    mutating func calc() -> Void
+    var input: [InputType]? { get }
+    var result: ResultType? { get set }
+
+    init(input: [InputType])
+    mutating func calc()
 }

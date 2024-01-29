@@ -8,17 +8,19 @@
 import Foundation
 
 struct FXRand: FXAdaptor {
-    var name: String = "RAND"
-    
-    var input: [Any]
-    
-    var res: Any?
-    
-    init(input: [Any]) {
-        self.input = []
+    typealias InputType = Double
+    typealias ResultType = Double
+
+    var name: String
+    var input: [Double]?
+    var result: Double?
+
+    init(input: [Double]) {
+        name = "RAND"
+        self.input = input
     }
-    
+
     mutating func calc() {
-        res = Double.random(in: 0...1)
+        result = Double.random(in: 0 ... 1)
     }
 }
