@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "datalogic.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shotastage/DataLogic.swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2cfd7ed8d67049538836dec55b77fd8306b54dd3"
+      }
+    },
+    {
       "identity" : "swift-log",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/apple/swift-log.git",

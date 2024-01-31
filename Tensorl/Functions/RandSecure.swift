@@ -16,7 +16,7 @@ struct FXRandSecure: FXAdaptor {
     var result: Double?
 
     init(input: [Double]) {
-        name = "RAND"
+        name = "RANDSECURE"
         self.input = input
     }
 

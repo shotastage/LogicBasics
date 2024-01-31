@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		2508466B2B5AD77200DC6C9C /* TensorWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2508466A2B5AD77200DC6C9C /* TensorWindowView.swift */; };
+		251BFB472B668FB500EB50DF /* RandSecure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 251BFB462B668FB500EB50DF /* RandSecure.swift */; };
+		251BFB4A2B66900800EB50DF /* DataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 251BFB492B66900800EB50DF /* DataLogic */; };
 		252791852B60B94B00BDAFCF /* Scenes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 252791842B60B94B00BDAFCF /* Scenes.swift */; };
 		2544C5942B62ACE500BD04F3 /* TSWindowManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2544C5932B62ACE500BD04F3 /* TSWindowManager.swift */; };
 		255B6B882B56210E00DB8EA0 /* CreationWindowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B872B56210E00DB8EA0 /* CreationWindowView.swift */; };
-		255B6B8A2B56210E00DB8EA0 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B892B56210E00DB8EA0 /* Item.swift */; };
 		255B6B8C2B56210F00DB8EA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255B6B8B2B56210F00DB8EA0 /* Assets.xcassets */; };
 		255B6B902B56210F00DB8EA0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 255B6B8F2B56210F00DB8EA0 /* Preview Assets.xcassets */; };
 		255B6B9B2B56210F00DB8EA0 /* TensorlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255B6B9A2B56210F00DB8EA0 /* TensorlTests.swift */; };
@@ -22,10 +23,12 @@
 		255F19422B615D4000412B3B /* VisualEffectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 255F19412B615D4000412B3B /* VisualEffectView.swift */; };
 		255F19462B6174F100412B3B /* WindowManagement in Frameworks */ = {isa = PBXBuildFile; productRef = 255F19452B6174F100412B3B /* WindowManagement */; };
 		25A1CCEF2B5EBA4600CFEB5E /* Logging in Frameworks */ = {isa = PBXBuildFile; productRef = 25A1CCEE2B5EBA4600CFEB5E /* Logging */; };
+		25A3AC512B68108400A2C05B /* SUM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A3AC502B68108400A2C05B /* SUM.swift */; };
+		25A3AC532B6811BC00A2C05B /* DataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A3AC522B6811BC00A2C05B /* DataTypes.swift */; };
 		25CA4BD62B64B6E700680842 /* WelcomeWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BD52B64B6E700680842 /* WelcomeWindow.swift */; };
 		25CA4BD82B64B89A00680842 /* NSApp+openWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BD72B64B89A00680842 /* NSApp+openWindow.swift */; };
 		25CA4BDD2B64BAD300680842 /* TensorWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25CA4BDC2B64BAD300680842 /* TensorWindow.swift */; };
-		25E21AC72B65FAE60071D4CC /* FxAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */; };
+		25E21AC72B65FAE60071D4CC /* FXAdaptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E21AC62B65FAE60071D4CC /* FXAdaptor.swift */; };
 		25E21AC92B65FB8B0071D4CC /* Rand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25E21AC82B65FB8B0071D4CC /* Rand.swift */; };
 		25FE06232B5FCB8700DE562F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE06222B5FCB8700DE562F /* AppDelegate.swift */; };
 		25FE06652B60248400DE562F /* TensorlApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25FE06642B60248400DE562F /* TensorlApp.swift */; };
@@ -50,11 +53,11 @@
 
 /* Begin PBXFileReference section */
 		2508466A2B5AD77200DC6C9C /* TensorWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorWindowView.swift; sourceTree = "<group>"; };
+		251BFB462B668FB500EB50DF /* RandSecure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandSecure.swift; sourceTree = "<group>"; };
 		252791842B60B94B00BDAFCF /* Scenes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scenes.swift; sourceTree = "<group>"; };
 		2544C5932B62ACE500BD04F3 /* TSWindowManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSWindowManager.swift; sourceTree = "<group>"; };
 		255B6B822B56210E00DB8EA0 /* Tensorl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Tensorl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		255B6B872B56210E00DB8EA0 /* CreationWindowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationWindowView.swift; sourceTree = "<group>"; };
-		255B6B892B56210E00DB8EA0 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		255B6B8B2B56210F00DB8EA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		255B6B8D2B56210F00DB8EA0 /* Tensorl.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Tensorl.entitlements; sourceTree = "<group>"; };
 		255B6B8F2B56210F00DB8EA0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -67,10 +70,12 @@
 		255D04A12B598B4800D86F17 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		255F193E2B60C49800412B3B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		255F19412B615D4000412B3B /* VisualEffectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisualEffectView.swift; sourceTree = "<group>"; };
+		25A3AC502B68108400A2C05B /* SUM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUM.swift; sourceTree = "<group>"; };
+		25A3AC522B6811BC00A2C05B /* DataTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTypes.swift; sourceTree = "<group>"; };
 		25CA4BD52B64B6E700680842 /* WelcomeWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindow.swift; sourceTree = "<group>"; };
 		25CA4BD72B64B89A00680842 /* NSApp+openWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSApp+openWindow.swift"; sourceTree = "<group>"; };
 		25CA4BDC2B64BAD300680842 /* TensorWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorWindow.swift; sourceTree = "<group>"; };
-		25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FxAdaptor.swift; sourceTree = "<group>"; };
+		25E21AC62B65FAE60071D4CC /* FXAdaptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FXAdaptor.swift; sourceTree = "<group>"; };
 		25E21AC82B65FB8B0071D4CC /* Rand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rand.swift; sourceTree = "<group>"; };
 		25FE06222B5FCB8700DE562F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		25FE06642B60248400DE562F /* TensorlApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TensorlApp.swift; sourceTree = "<group>"; };
@@ -83,6 +88,7 @@
 			files = (
 				25A1CCEF2B5EBA4600CFEB5E /* Logging in Frameworks */,
 				255F19462B6174F100412B3B /* WindowManagement in Frameworks */,
+				251BFB4A2B66900800EB50DF /* DataLogic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,6 +157,7 @@
 		255B6B842B56210E00DB8EA0 /* Tensorl */ = {
 			isa = PBXGroup;
 			children = (
+				258568CF2B69F17900E93DD5 /* Functions */,
 				25E21AC52B65FA480071D4CC /* Engine */,
 				2516E75E2B6493F500845458 /* Vendor */,
 				2544C58E2B62AB7400BD04F3 /* Utils */,
@@ -158,7 +165,6 @@
 				255F19402B615D3500412B3B /* Views */,
 				255F193C2B60C48800412B3B /* Features */,
 				250846692B5AD76400DC6C9C /* Windows */,
-				255B6B892B56210E00DB8EA0 /* Item.swift */,
 				255B6B8B2B56210F00DB8EA0 /* Assets.xcassets */,
 				255B6B8D2B56210F00DB8EA0 /* Tensorl.entitlements */,
 				255B6B912B56210F00DB8EA0 /* Info.plist */,
@@ -227,6 +233,16 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		258568CF2B69F17900E93DD5 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				25A3AC502B68108400A2C05B /* SUM.swift */,
+				25E21AC82B65FB8B0071D4CC /* Rand.swift */,
+				251BFB462B668FB500EB50DF /* RandSecure.swift */,
+			);
+			path = Functions;
+			sourceTree = "<group>";
+		};
 		25CA4BD42B64B6DE00680842 /* Welcome */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,8 +264,8 @@
 		25E21AC52B65FA480071D4CC /* Engine */ = {
 			isa = PBXGroup;
 			children = (
-				25E21AC62B65FAE60071D4CC /* FxAdaptor.swift */,
-				25E21AC82B65FB8B0071D4CC /* Rand.swift */,
+				25E21AC62B65FAE60071D4CC /* FXAdaptor.swift */,
+				25A3AC522B6811BC00A2C05B /* DataTypes.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -273,6 +289,7 @@
 			packageProductDependencies = (
 				25A1CCEE2B5EBA4600CFEB5E /* Logging */,
 				255F19452B6174F100412B3B /* WindowManagement */,
+				251BFB492B66900800EB50DF /* DataLogic */,
 			);
 			productName = Tensorl;
 			productReference = 255B6B822B56210E00DB8EA0 /* Tensorl.app */;
@@ -350,6 +367,7 @@
 				25ED8B9F2B57AFA90098DC46 /* XCRemoteSwiftPackageReference "Charts" */,
 				25A1CCED2B5EBA4600CFEB5E /* XCRemoteSwiftPackageReference "swift-log" */,
 				255F19442B6174F100412B3B /* XCRemoteSwiftPackageReference "SwiftUI-WindowManagement" */,
+				251BFB482B66900800EB50DF /* XCRemoteSwiftPackageReference "DataLogic.swift" */,
 			);
 			productRefGroup = 255B6B832B56210E00DB8EA0 /* Products */;
 			projectDirPath = "";
@@ -396,18 +414,20 @@
 				25CA4BD82B64B89A00680842 /* NSApp+openWindow.swift in Sources */,
 				2544C5942B62ACE500BD04F3 /* TSWindowManager.swift in Sources */,
 				255B6B882B56210E00DB8EA0 /* CreationWindowView.swift in Sources */,
+				251BFB472B668FB500EB50DF /* RandSecure.swift in Sources */,
+				25A3AC532B6811BC00A2C05B /* DataTypes.swift in Sources */,
 				25E21AC92B65FB8B0071D4CC /* Rand.swift in Sources */,
 				25CA4BDD2B64BAD300680842 /* TensorWindow.swift in Sources */,
 				255D04A22B598B4800D86F17 /* HomeView.swift in Sources */,
 				255F19422B615D4000412B3B /* VisualEffectView.swift in Sources */,
 				255F193F2B60C49800412B3B /* SettingsView.swift in Sources */,
+				25A3AC512B68108400A2C05B /* SUM.swift in Sources */,
 				25FE06652B60248400DE562F /* TensorlApp.swift in Sources */,
 				25CA4BD62B64B6E700680842 /* WelcomeWindow.swift in Sources */,
-				255B6B8A2B56210E00DB8EA0 /* Item.swift in Sources */,
 				252791852B60B94B00BDAFCF /* Scenes.swift in Sources */,
 				25FE06232B5FCB8700DE562F /* AppDelegate.swift in Sources */,
 				2508466B2B5AD77200DC6C9C /* TensorWindowView.swift in Sources */,
-				25E21AC72B65FAE60071D4CC /* FxAdaptor.swift in Sources */,
+				25E21AC72B65FAE60071D4CC /* FXAdaptor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -772,6 +792,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		251BFB482B66900800EB50DF /* XCRemoteSwiftPackageReference "DataLogic.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/shotastage/DataLogic.swift.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		255F19442B6174F100412B3B /* XCRemoteSwiftPackageReference "SwiftUI-WindowManagement" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Wouter01/SwiftUI-WindowManagement.git";
@@ -799,6 +827,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		251BFB492B66900800EB50DF /* DataLogic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 251BFB482B66900800EB50DF /* XCRemoteSwiftPackageReference "DataLogic.swift" */;
+			productName = DataLogic;
+		};
 		255F19452B6174F100412B3B /* WindowManagement */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 255F19442B6174F100412B3B /* XCRemoteSwiftPackageReference "SwiftUI-WindowManagement" */;
