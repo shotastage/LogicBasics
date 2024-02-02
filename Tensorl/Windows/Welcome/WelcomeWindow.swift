@@ -16,10 +16,13 @@ struct WelcomeWindow: Scene {
                 .frame(width: 740, height: 432)
                 .task {
                     if let window = NSApp.findWindow(.creationWindowGroup) {
+                        window.isMovableByWindowBackground = true
+
+                        BlurBackground.apply(to: window)
+
                         window.standardWindowButton(.closeButton)?.isHidden = true
                         window.standardWindowButton(.miniaturizeButton)?.isHidden = true
                         window.standardWindowButton(.zoomButton)?.isHidden = true
-                        window.isMovableByWindowBackground = true
                     }
                 }
         }

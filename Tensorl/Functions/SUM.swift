@@ -21,6 +21,6 @@ struct FXSum: FXAdaptor {
     }
 
     mutating func calc() {
-        result = input?.reduce(0, { $0 + $1 })
+        result = input?.reduce(0) { $0 + $1 }
     }
 }

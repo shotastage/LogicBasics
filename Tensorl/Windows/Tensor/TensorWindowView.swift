@@ -18,13 +18,15 @@ struct TensorWindowView: View {
     var body: some View {
         VStack {
             Text("<<TOOLBAR AREA>>")
+                .frame(maxWidth: .infinity, maxHeight: 90.0)
+                .background(Color.blue)
             SpreadsheetView()
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             Spacer()
             Text("<<BOTTOM BAR AREA>>")
-                .frame(height: 10.0)
+                .frame(maxWidth: .infinity, maxHeight: 20.0)
+                .background(Color.red)
         }
-        .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
         .padding(.horizontal, 0.0)
     }
 }

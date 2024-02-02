@@ -40,10 +40,8 @@ struct ToolbarView: View {
 
     var body: some View {
         HStack {
-            Button(action: {
+            CloseButtonView {
                 NSApp.hide(nil)
-            }) {
-                Image(systemName: "cross")
             }
             Button(action: {}) {
                 Image(systemName: "house")
@@ -82,8 +80,8 @@ struct Sidebar: View {
                 .onTapGesture { selectedView = "New Project" }
             SidebarItem(label: "Settings", imageName: "gearshape", isSelected: selectedView == "Settings")
                 .onTapGesture { selectedView = "Settings" }
-            SidebarItem(label: "About", imageName: "plus.square.on.square", isSelected: selectedView == "New Project")
-                .onTapGesture { selectedView = "New Project" }
+            SidebarItem(label: "About", imageName: "plus.square.on.square", isSelected: selectedView == "About")
+                .onTapGesture { selectedView = "About" }
             Spacer()
         }
     }
@@ -125,6 +123,12 @@ struct MainContentView: View {
             case "Settings":
                 Button("Open Setting") {
                     NSApp.openWindow(.settingWindowGroup)
+                }
+            case "About":
+                VStack {
+                    Text("Tensorl")
+                    Text("Version 0.0.1")
+                    Text("Copyright (C) 2024 Shota Shimazu")
                 }
             default:
                 Text("Select a view")

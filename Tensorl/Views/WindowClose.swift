@@ -7,27 +7,28 @@
 
 import SwiftUI
 
-
-struct WindowClose: View {
-
-    @State var isLiked: Bool = false
+struct CloseButtonView: View {
+    var action: () -> Void
 
     var body: some View {
-        Button(action: {
-            print("Hello")
-        }, label: {
-            Image(systemName: isLiked ? "heart.fill" : "heart")
-                .font(.system(size: 24))
-                .padding(10)
-        })
-        .buttonStyle(.plain)
-        .background(Color.red)
-        .cornerRadius(100)
-        .frame(width: 100, height: 100)
+        Button(action: action) {
+            ZStack {
+                Circle()
+                    .foregroundColor(.red)
+                    .frame(width: 16, height: 16)
+                Text("X")
+                    .font(.system(size: 12))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+            }
+        }
+        .buttonStyle(PlainButtonStyle())
+        .shadow(radius: 1)
     }
 }
 
-
 #Preview {
-    WindowClose()
+    CloseButtonView {
+        print("Hello")
+    }
 }

@@ -14,15 +14,15 @@ struct TensorWindow: Scene {
     var body: some Scene {
         Window("Get Started!", id: SceneID.tensorWindowGroup.id) {
             TensorWindowView()
-                .frame(width: 1400, height: 800)
                 .task {
                     if let window = NSApp.findWindow(.tensorWindowGroup) {
                         window.isMovableByWindowBackground = true
+                        BlurBackground.apply(to: window)
                     }
                 }
         }
         .windowStyle(.hiddenTitleBar)
-        .windowResizability(.contentSize)
+        .windowResizability(.automatic)
         .register(.tensorWindowGroup)
         .titlebarAppearsTransparent()
         .transition(.documentWindow)

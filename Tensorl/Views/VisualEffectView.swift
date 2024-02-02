@@ -6,41 +6,23 @@
 //
 
 import AppKit
+import Cocoa
 import SwiftUI
 
-// Define a SwiftUI view that wraps NSVisualEffectView from AppKit
-struct VisualEffectView: NSViewRepresentable {
-    var material: NSVisualEffectView.Material
-    var blendingMode: NSVisualEffectView.BlendingMode
-    var state: NSVisualEffectView.State
-
-    func makeNSView(context: Context) -> NSVisualEffectView {
-        let view = NSVisualEffectView()
-        view.material = material
-        view.blendingMode = blendingMode
-        view.state = state
-        return view
-    }
-
-    func updateNSView(_ nsView: NSVisualEffectView, context: Context) {
-        nsView.material = material
-        nsView.blendingMode = blendingMode
-        nsView.state = state
-    }
-}
-
-// Use the VisualEffectView in your SwiftUI view
-struct GlassBackgroundView: View {
-    var body: some View {
-        Text("Hello, World!")
-            .frame(width: 300, height: 200)
-            .background(VisualEffectView(material: .hudWindow, blendingMode: .withinWindow, state: .active))
-            .cornerRadius(20)
-    }
-}
-
-struct GlassBackgroundView_Previews: PreviewProvider {
-    static var previews: some View {
-        GlassBackgroundView()
+class BlurBackground {
+    static func apply(to window: NSWindow) {
+        // Blue effect
+        let visualEffectView = NSVisualEffectView(frame: window.contentView?.bounds ?? NSRect.zero)
+        visualEffectView.blendingMode = .behindWindow
+        visualEffectView.state = .active
+        visualEffectView.material = .hudWindow
+        window.contentView?.addSubview(visualEffectView, positioned: .below, relativeTo: nil)
+        visualEffectView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            visualEffectView.topAnchor.constraint(equalTo: window.contentView!.topAnchor),
+            visualEffectView.bottomAnchor.constraint(equalTo: window.contentView!.bottomAnchor),
+            visualEffectView.leadingAnchor.constraint(equalTo: window.contentView!.leadingAnchor),
+            visualEffectView.trailingAnchor.constraint(equalTo: window.contentView!.trailingAnchor),
+        ])
     }
 }
