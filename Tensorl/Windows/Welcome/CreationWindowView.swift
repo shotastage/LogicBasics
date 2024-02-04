@@ -6,7 +6,6 @@
 //
 
 import SwiftData
-
 import SwiftUI
 
 struct CreationWindowView: View {
@@ -170,8 +169,3 @@ struct DocumentCard: View {
         .shadow(radius: 5)
     }
 }
-
-// #Preview {
-//    ContentView(shownWindow: <#Binding<TensorlApp.WindowType>#>)
-//        .modelContainer(for: Item.self, inMemory: true)
-// }

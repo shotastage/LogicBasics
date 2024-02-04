@@ -16,17 +16,21 @@ struct WelcomeWindow: Scene {
                 .frame(width: 740, height: 432)
                 .task {
                     if let window = NSApp.findWindow(.creationWindowGroup) {
+                        //- BlurBackground.apply(to: window)
+
                         window.isMovableByWindowBackground = true
 
-                        BlurBackground.apply(to: window)
-
-                        window.standardWindowButton(.closeButton)?.isHidden = true
-                        window.standardWindowButton(.miniaturizeButton)?.isHidden = true
-                        window.standardWindowButton(.zoomButton)?.isHidden = true
+                        disableDefaultWindow(to: window)
                     }
                 }
         }
         .windowStyle(.hiddenTitleBar)
         .windowResizability(.contentSize)
+    }
+
+    private func disableDefaultWindow(to window: NSWindow) {
+        window.standardWindowButton(.closeButton)?.isHidden = true
+        window.standardWindowButton(.miniaturizeButton)?.isHidden = true
+        window.standardWindowButton(.zoomButton)?.isHidden = true
     }
 }

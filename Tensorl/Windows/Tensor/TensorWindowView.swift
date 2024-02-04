@@ -16,18 +16,20 @@ struct TensorWindowView: View {
     @State private var data = Array(repeating: Array(repeating: "", count: 10), count: 20)
 
     var body: some View {
-        VStack {
-            Text("<<TOOLBAR AREA>>")
-                .frame(maxWidth: .infinity, maxHeight: 90.0)
-                .background(Color.blue)
-            SpreadsheetView()
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-            Spacer()
-            Text("<<BOTTOM BAR AREA>>")
-                .frame(maxWidth: .infinity, maxHeight: 20.0)
-                .background(Color.red)
+        ZStack {
+            VStack {
+                Text("<<TOOLBAR AREA>>")
+                    .frame(maxWidth: .infinity, maxHeight: 90.0)
+                    .background(Color.clear)
+                SpreadsheetView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                Spacer()
+                Text("<<BOTTOM BAR AREA>>")
+                    .frame(maxWidth: .infinity, maxHeight: 20.0)
+                    .background(Color.red)
+            }
+            .padding(.horizontal, 0.0)
         }
-        .padding(.horizontal, 0.0)
     }
 }
 
