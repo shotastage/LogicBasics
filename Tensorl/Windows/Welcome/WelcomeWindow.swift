@@ -16,10 +16,8 @@ struct WelcomeWindow: Scene {
                 .frame(width: 740, height: 432)
                 .task {
                     if let window = NSApp.findWindow(.creationWindowGroup) {
-                        //- BlurBackground.apply(to: window)
-
+                        BlurBackground.apply(to: window)
                         window.isMovableByWindowBackground = true
-
                         disableDefaultWindow(to: window)
                     }
                 }
