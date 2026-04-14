@@ -7,7 +7,7 @@
 
 import Combine
 
-protocol FXAdaptor {
+public protocol FXAdaptor {
     associatedtype InputType
     associatedtype ResultType
 

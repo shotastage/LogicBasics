@@ -5,6 +5,7 @@
 //  Created by Shota Shimazu on 2024/02/04.
 //
 
+import Foundation
 import os
 
 public enum TSLogLevel: String {

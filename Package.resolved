@@ -1,0 +1,15 @@
+{
+  "originHash" : "e2015d3ed76a4886cf136312174fff21ad06927eb886222e78e4ceb34b3aa256",
+  "pins" : [
+    {
+      "identity" : "datalogic.swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/shotastage/DataLogic.swift.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "509618d997b776e843629e2ec46b9eb14f9d94a0"
+      }
+    }
+  ],
+  "version" : 3
+}

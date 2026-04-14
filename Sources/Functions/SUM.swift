@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Engine
 
 struct FXSum: FXAdaptor {
     typealias InputType = Double

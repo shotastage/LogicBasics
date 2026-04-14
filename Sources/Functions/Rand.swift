@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Engine
 
 struct FXRand: FXAdaptor {
     typealias InputType = Double
