@@ -1,9 +1,1 @@
---swiftversion 5.9
-
---disable andOperator
---disable enumNamespaces
---disable numberFormatting
-
---ifdef noindent
---indentcase true
---stripunusedargs closure-only
+--swiftversion 6.3
