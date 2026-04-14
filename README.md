@@ -1,5 +1,3 @@
-# Tensorl
+# LogicBasics Language
 
 >> Now under construction...
-
-Tensorl is vector operation based spreadsheet.
